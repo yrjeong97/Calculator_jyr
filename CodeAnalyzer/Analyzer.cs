@@ -29,7 +29,7 @@ class Program
 
         //var csFiles = Directory.GetFiles(folderPath, "*.cs", SearchOption.AllDirectories);
 
-        pascalRule.PascalCase(@"CodeAnalyzer\CodeAnalyzer.csproj");
+        pascalRule.PascalCase(@"Calc\Calc.csproj");
 
 
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
