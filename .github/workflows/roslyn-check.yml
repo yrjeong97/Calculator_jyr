@@ -31,3 +31,5 @@ jobs:
         dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
         
         MSBuildLocator.Unregister
+
+
