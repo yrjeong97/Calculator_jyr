@@ -14,17 +14,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RoslynTest\\Calc\\Calc.csproj",
+      "projectUniqueName": "D:\\Roslyn\\Calculator_jyr\\Calc\\Calc.csproj",
       "projectName": "Calc",
-      "projectPath": "D:\\RoslynTest\\Calc\\Calc.csproj",
+      "projectPath": "D:\\Roslyn\\Calculator_jyr\\Calc\\Calc.csproj",
       "packagesPath": "C:\\Users\\yrjeong\\.nuget\\packages\\",
-      "outputPath": "D:\\RoslynTest\\Calc\\obj\\",
+      "outputPath": "D:\\Roslyn\\Calculator_jyr\\Calc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\RoslynTest\\Calc\\NuGet.Config",
+        "D:\\Roslyn\\Calculator_jyr\\Calc\\NuGet.Config",
         "C:\\Users\\yrjeong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
