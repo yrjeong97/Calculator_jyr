@@ -18,18 +18,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
 
-    - name: Change working directory
-      run: cd CodeAnalyzer
-
     - name: Restore dependencies
-      run: dotnet restore CodeAnalyzer/CodeAnalyzer.csproj
+      run: dotnet restore CodeAnalyzer.csproj
 
     - name: Build and Run Roslyn Analysis
       run: |
-        MSBuildLocator.RegisterDefaults
-
         dotnet build --configuration Release
 
-        dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
+        dotnet run --project CodeAnalyzer.csproj
         
         MSBuildLocator.Unregister
