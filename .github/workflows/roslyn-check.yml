@@ -19,12 +19,12 @@ jobs:
         dotnet-version: 5.0.x
 
     - name: Restore dependencies
-      run: dotnet restore CodeAnalyzer.csproj
+      run: dotnet restore CodeAnalyzer/CodeAnalyzer.csproj
 
     - name: Build and Run Roslyn Analysis
       run: |
         dotnet build --configuration Release
 
-        dotnet run --project CodeAnalyzer.csproj
+        dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
         
         MSBuildLocator.Unregister
