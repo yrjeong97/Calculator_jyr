@@ -15,7 +15,7 @@ namespace Calculator
         string displayExpression;
         string displayResult;
         string preInput;
-        public string Unused;
+        string unuse;
         #endregion
 
 
