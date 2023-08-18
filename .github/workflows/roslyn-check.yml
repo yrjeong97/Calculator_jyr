@@ -28,5 +28,3 @@ jobs:
         if [ "${{ runner.os }}" == "Windows" ]; then
           dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
         fi
-        
-        MSBuildLocator.Unregister
