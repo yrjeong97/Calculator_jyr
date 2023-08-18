@@ -18,6 +18,10 @@ jobs:
       with:
         dotnet-version: 5.0.x
 
+    - uses: actions/labeler@v2
+      with:
+        repo-token: "${{ secrets.ACTIONSTOKEN }}"
+
     - name: Restore dependencies
       run: dotnet restore CodeAnalyzer/CodeAnalyzer.csproj
 
