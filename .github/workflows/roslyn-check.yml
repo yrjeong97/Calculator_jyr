@@ -22,7 +22,7 @@ jobs:
       run: cd CodeAnalyzer
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore CodeAnalyzer/CodeAnalyzer.csproj
 
     - name: Build and Run Roslyn Analysis
       run: |
