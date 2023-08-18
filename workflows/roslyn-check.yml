@@ -1,0 +1,35 @@
+name: Roslyn Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Find changed files
+      id: find_changes
+      run: echo "::set-output name=files::$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})"
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 4.7.2
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Run Roslyn on changed files
+      run: |
+        changed_files=${{ steps.find_changes.outputs.files }}
+        if [ -n "$changed_files" ]; then
+          dotnet roslyn-script.dll $changed_files
+        else
+          echo "No changed files found."
+        fi
