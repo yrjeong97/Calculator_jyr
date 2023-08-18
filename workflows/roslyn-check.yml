@@ -21,8 +21,15 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
 
-    - name: Build Roslyn project
-      run: dotnet build
 
-    - name: Run Roslyn project
-      run: dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
+    -name: Build and Run Roslyn Analysis
+      run: |
+        MSBuildLocator.RegisterDefaults
+
+        dotnet build --configuration Release
+
+        dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
+        
+        MSBuildLocator.Unregister
+
+
