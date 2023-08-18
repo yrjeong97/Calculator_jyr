@@ -19,7 +19,7 @@ jobs:
           dotnet-version: 5.0.x
 
       - name: Restore dependencies
-        run: dotnet restore CodeAnalyzer/CodeAnalyzer.csproj
+        run: dotnet restore Calc/Calc.csproj
 
       - name: Build and Run Roslyn Analysis
         run: |
@@ -32,6 +32,11 @@ jobs:
       - uses: actions/labeler@v2
         with:
           repo-token: "${{ secrets.ACTIONSTOKEN }}"
+
+      - name: Run Static Analysis on Calc Project
+        run: |
+          dotnet build --configuration Release Calc/Calc.csproj
+          # 이 부분에서 Calc 프로젝트에 대한 Roslyn 정적 분석을 수행하십시오.
 
       - name: Commit and Push Report
         run: |
