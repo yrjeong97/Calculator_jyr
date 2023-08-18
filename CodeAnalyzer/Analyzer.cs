@@ -15,21 +15,23 @@ class Program
     {
         MSBuildLocator.RegisterDefaults();
 
-        NamingRule namingRule = new NamingRule();
-        PotentialDefect potentialDefect = new PotentialDefect();
+        PascalRule pascalRule = new PascalRule();
+        //PotentialDefect potentialDefect = new PotentialDefect();
 
-        string folderPath = "D:\\Calculator_Roslyn\\Calculator\\ViewModel";
+        //string folderPath = "D:\\Calculator_Roslyn\\Calculator\\ViewModel";
         //string solutionPath = @"D:\Calculator_Roslyn\Calculator\Calculator.sln";
 
-        var csFiles = Directory.GetFiles(folderPath, "*.cs", SearchOption.AllDirectories);
-        
-        foreach(var csFile in csFiles)
-        {
-           namingRule.PascalCase(csFile);
-        }
+        //var csFiles = Directory.GetFiles(folderPath, "*.cs", SearchOption.AllDirectories);
+
+        pascalRule.PascalCase(@"CodeAnalyzer\CodeAnalyzer.csproj");
+
+        //foreach(var csFile in csFiles)
+        //{
+        //    pascalRule.PascalCase(csFile);
+        //}
 
 
-        potentialDefect.UnusedVariable();
+        //potentialDefect.UnusedVariable();
 
         MSBuildLocator.Unregister();
 
