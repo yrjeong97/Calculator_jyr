@@ -31,8 +31,7 @@ jobs:
 
     - name: Generate Analysis Report
       run: |
-        analysis_results=$(cat analysis_report.txt)  # 수정된 부분
-        echo "$analysis_results" > analysis_report.txt
+        echo "Analysis results" > analysis_report.txt
 
     - name: Commit and Push Report
       run: |
