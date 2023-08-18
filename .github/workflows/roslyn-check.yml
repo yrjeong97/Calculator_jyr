@@ -1,4 +1,4 @@
-name: Build and Run Roslyn Project
+name: Analyze Code and Generate Report
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  analyze-code:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,3 +28,17 @@ jobs:
         if [ "${{ runner.os }}" == "Windows" ]; then
           dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
         fi
+
+    - name: Generate Analysis Report
+      run: |
+        analysis_results=$(cat D:\RoslynTest\namingRule_warnig_message.txt)
+        report_file=analysis_report.txt
+        echo "$analysis_results" > $report_file
+
+    - name: Commit and Push Report
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add analysis_report.txt
+        git commit -m "Add analysis report"
+        git push origin main
