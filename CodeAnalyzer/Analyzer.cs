@@ -33,7 +33,7 @@ class Program
 
         //potentialDefect.UnusedVariable();
 
-        MSBuildLocator.Unregister();
+        //MSBuildLocator.Unregister();
 
     }
 
