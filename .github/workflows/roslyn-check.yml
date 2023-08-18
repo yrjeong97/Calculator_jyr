@@ -23,7 +23,7 @@ jobs:
 
     - name: Build and Run Roslyn Analysis
       run: |
-        dotnet build --configuration Release
+        dotnet build --configuration Release CodeAnalyzer/CodeAnalyzer.csproj
 
         dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
         
