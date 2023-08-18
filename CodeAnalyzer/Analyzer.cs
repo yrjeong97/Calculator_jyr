@@ -8,12 +8,18 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using CodingStandard;
 using PotentialFault ;
 using Microsoft.Build.Locator;
+using System.Runtime.InteropServices;
 
 class Program 
 {
     static void Main(string[] args)
     {
-        MSBuildLocator.RegisterDefaults();
+        //MSBuildLocator.RegisterDefaults();
+
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            MSBuildLocator.RegisterDefaults();
+        }
 
         PascalRule pascalRule = new PascalRule();
         //PotentialDefect potentialDefect = new PotentialDefect();
@@ -25,6 +31,11 @@ class Program
 
         pascalRule.PascalCase(@"CodeAnalyzer\CodeAnalyzer.csproj");
 
+
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            MSBuildLocator.Unregister();
+        }
         //foreach(var csFile in csFiles)
         //{
         //    pascalRule.PascalCase(csFile);

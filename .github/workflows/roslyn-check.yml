@@ -18,17 +18,20 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - uses: actions/labeler@v2
-        with:
-          repo-token: "${{ secrets.ACTIONSTOKEN }}"
-
       - name: Restore dependencies
         run: dotnet restore CodeAnalyzer/CodeAnalyzer.csproj
 
       - name: Build and Run Roslyn Analysis
         run: |
           dotnet build --configuration Release CodeAnalyzer/CodeAnalyzer.csproj
-          dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj >> analysis_report.txt
+
+          if [ "${{ runner.os }}" == "Windows" ]; then
+            dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj >> analysis_report.txt
+          fi
+
+      - uses: actions/labeler@v2
+        with:
+          repo-token: "${{ secrets.ACTIONSTOKEN }}"
 
       - name: Commit and Push Report
         run: |
