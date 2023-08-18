@@ -26,9 +26,7 @@ jobs:
         dotnet build --configuration Release CodeAnalyzer/CodeAnalyzer.csproj
 
         if [ "${{ runner.os }}" == "Windows" ]; then
-          dotnet run --project CodeAnalyzer.csproj
+          dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
         fi
-
-        dotnet run --project CodeAnalyzer/CodeAnalyzer.csproj
         
         MSBuildLocator.Unregister
