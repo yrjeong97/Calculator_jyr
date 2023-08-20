@@ -36,7 +36,7 @@ jobs:
       - name: Debug Step
         run: |
           echo "Starting Debug Step"
-          git add -f analysis_report.txt
+          git commit -m "Add analysis report"
           echo "Debug Step Completed"
 
       - name: Commit and Push Report
