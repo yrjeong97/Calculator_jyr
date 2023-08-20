@@ -33,12 +33,11 @@ jobs:
         with:
           repo-token: "${{ secrets.ACTIONSTOKEN }}"
 
-      - name: Debugging Step
+      - name: Debug Step
         run: |
-          echo "Before git config"
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          echo "After git config"
+          echo "Starting Debug Step"
+          git add -f analysis_report.txt
+          echo "Debug Step Completed"
 
       - name: Commit and Push Report
         run: |
