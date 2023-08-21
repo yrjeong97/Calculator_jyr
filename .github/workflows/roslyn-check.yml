@@ -41,8 +41,8 @@ jobs:
 
       - name: Commit and Push Report
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "yrjeong97"
+          git config user.email "yrjeong97@ati2000.co.kr"
           git add -f analysis_report.txt
           git commit -m "Add analysis report"
           git push origin main
