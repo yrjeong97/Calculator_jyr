@@ -48,7 +48,7 @@ jobs:
       - name: Commit and Push Report
         run: |
           git add -f analysis_report.txt
-          git commit -m "Add analysis report"
+          git commit -am "Add analysis report"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
